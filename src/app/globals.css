@@ -4,7 +4,7 @@
 
 @layer components{
     .form{
-        @apply md:shadow-xl w-full md:w-[450px] mx-auto rounded-xl p-10 mt-20
+        @apply md:shadow-xl w-full mx-auto rounded-xl p-10 my-20
     }
 
     .form-control{

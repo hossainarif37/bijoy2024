@@ -11,7 +11,7 @@ const Login = () => {
     const [passwordVisible, setPasswordVisible] = useState(false);
 
     return (
-        <form className="form">
+        <form className="form md:w-[450px]">
             <h1 className="form-title">Login</h1>
 
             {/* Email */}

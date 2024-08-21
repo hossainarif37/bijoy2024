@@ -1,8 +1,9 @@
+import Register from "./component/Register";
 
 const RegisterPage = () => {
     return (
-        <div>
-            RegisterPage
+        <div className="min-h-screen">
+            <Register/>
         </div>
     );
 };
