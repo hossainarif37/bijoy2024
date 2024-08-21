@@ -4,34 +4,40 @@ import { Button, ConfigProvider, Input, Space } from "antd";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { useForm } from "react-hook-form";
 
-
+type TInput = {
+    email: string;
+    password: string;
+}
 
 const Login = () => {
-    const [passwordVisible, setPasswordVisible] = useState(false);
+    const { register, handleSubmit, watch, formState: { errors } } = useForm<TInput>();
+
+    const handleLogin = (data: TInput) => {
+        console.log(data);
+    }
+
 
     return (
-        <form className="form md:w-[450px]">
+        <form onSubmit={handleSubmit(handleLogin)} className="form md:max-w-xl">
             <h1 className="form-title">Login</h1>
 
-            {/* Email */}
             <div className="flex flex-col gap-y-7">
+                {/* Email */}
                 <div className="form-control">
                     <label htmlFor="email">Email</label>
-                    <Input placeholder="Enter your email" id="email" className="input" />
+                    <input {...register('email', { required: 'Email is required' })} type="email" placeholder="Enter your email" id="email" className="input" />
+
+                    {errors?.email?.message && <p className="error">{errors?.email?.message}</p>}
                 </div>
 
                 {/* Password */}
                 <div className="form-control">
                     <label htmlFor="password">Password</label>
-                    <Input.Password
-                        className="input"
-                        placeholder="Enter your password"
-                        visibilityToggle={{
-                            visible: passwordVisible,
-                            onVisibleChange: setPasswordVisible,
-                        }}
-                    />
+                    <input {...register('password', { required: 'Password is required', minLength: { value: 8, message: 'Minimum length 8 characters' } })} type="password" className="input" placeholder="Enter strong password" id="password" />
+
+                    {errors?.password?.message && <p className="error">{errors?.password?.message}</p>}
                 </div>
 
                 {/* Submit Button */}
@@ -44,8 +50,12 @@ const Login = () => {
 
                 </div>
 
-                    {/* Separator */}
-                    <div className="w-[88%] mx-auto h-[1px] bg-gray-300 opacity-50"></div>
+                {/* Separator */}
+                <div className="flex justify-center items-center gap-x-2">
+                    <div className="w-full h-[1px] bg-gray-300 opacity-50"></div>
+                    <span className="mx-2">Or</span>
+                    <div className="w-full h-[1px] bg-gray-300 opacity-50"></div>
+                </div>
                 <div>
                     <button type="button" className="btn border flex justify-center gap-x-5 item-center text-black-100">
                         <Image src={'/google_icon.png'} alt="Google Icon" width={24} height={24} />
@@ -55,7 +65,7 @@ const Login = () => {
                 </div>
 
             </div>
-        </form>
+        </form >
     );
 };
 
