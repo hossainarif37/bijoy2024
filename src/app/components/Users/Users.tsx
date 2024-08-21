@@ -1,16 +1,24 @@
 "use client"
+import Loading from "@/components/ui/Loading";
 import { IUser } from "@/types/types";
 import { useEffect, useState } from "react";
 
 const Home = () => {
     const [users, setUsers] = useState<IUser[]>([]);
+    const [loading, setLoading] = useState(true);
+
     useEffect(() => {
         fetch('https://jsonplaceholder.typicode.com/users')
             .then(res => res.json())
             .then(data => {
-                setUsers(data)
+                setUsers(data);
+                setLoading(false);
             })
     }, [])
+
+    if (loading) {
+        return <Loading/>
+    }
 
     return (
         <div className="border mt-10 py-10 px-10 rounded-xl">
