@@ -1,10 +1,5 @@
+import Users from "./components/Users/Users";
 
-const HomePage = () => {
-  return (
-    <div>
-      HomePage
-    </div>
-  );
-};
+const HomePage = () => <Users/>
 
 export default HomePage;
