@@ -1,3 +1,29 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components{
+    .form{
+        @apply md:shadow-xl w-full md:w-[400px] mx-auto rounded-xl p-10 mt-20
+    }
+
+    .form-control{
+        @apply flex flex-col gap-y-2
+    }
+
+    .input{
+        @apply py-3
+    }
+
+    .form-title{
+        @apply text-xl md:text-2xl text-center mb-7 font-bold text-black-100
+    }
+
+    .btn{
+        @apply w-full py-3 rounded-lg active:scale-95 duration-150 text-white
+    }
+
+    .btn-primary{
+        @apply bg-gradient-to-r from-secondary to-primary
+    }
+}

@@ -1,8 +1,9 @@
+import Login from "./component/Login";
 
 const LoginPage = () => {
     return (
-        <div>
-            LoginPage
+        <div className="min-h-screen">
+            <Login />
         </div>
     );
 };

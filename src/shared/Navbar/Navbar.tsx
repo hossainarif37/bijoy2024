@@ -7,7 +7,7 @@ import { Icon } from "@iconify/react";
 const Navbar = () => {
     const [isNavToggeled, setIsNavToggled] = useState(false);
     return (
-        <nav className="flex justify-between item-center max-w-7xl px-2 md:px-0 mx-auto py-5">
+        <nav className="flex justify-between item-center max-w-7xl mx-auto px-5 md:px-0 py-5">
             <h1 className="text-xl md:text-3xl font-extrabold">
                 <span className="text-success">Bijoy</span><span className="text-error">2024</span>
             </h1>
@@ -32,7 +32,6 @@ const Navbar = () => {
                         ))
                     }
                 </ul>
-
             </div>
 
         </nav>
