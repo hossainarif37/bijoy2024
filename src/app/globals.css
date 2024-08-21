@@ -4,7 +4,7 @@
 
 @layer components{
     .form{
-        @apply md:shadow-xl w-full md:w-[400px] mx-auto rounded-xl p-10 mt-20
+        @apply md:shadow-xl w-full md:w-[450px] mx-auto rounded-xl p-10 mt-20
     }
 
     .form-control{
@@ -26,4 +26,33 @@
     .btn-primary{
         @apply bg-gradient-to-r from-secondary to-primary
     }
+
+    .gradient{
+        @apply bg-gradient-to-r from-secondary to-primary
+    }
 }
+
+
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: all 5000s ease-in-out 0s;
+}
+
+textarea::-webkit-scrollbar {
+    display: none;
+}
+
+textarea {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    resize: none;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
