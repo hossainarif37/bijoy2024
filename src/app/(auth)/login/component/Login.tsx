@@ -19,7 +19,6 @@ const Login = () => {
                 <div className="form-control">
                     <label htmlFor="email">Email</label>
                     <Input placeholder="Enter your email" id="email" className="input" />
-
                 </div>
 
                 {/* Password */}

@@ -4,7 +4,7 @@
 
 @layer components{
     .form{
-        @apply md:shadow-xl w-full mx-auto rounded-xl p-10 my-20
+        @apply md:shadow-xl w-full mx-auto rounded-xl p-14 my-20
     }
 
     .form-control{
@@ -12,7 +12,7 @@
     }
 
     .input{
-        @apply py-3
+        @apply py-3 outline-none px-2 border rounded-lg
     }
 
     .form-title{
@@ -29,6 +29,10 @@
 
     .gradient{
         @apply bg-gradient-to-r from-secondary to-primary
+    }
+
+    .error{
+        @apply text-error text-sm mt-1
     }
 }
 
