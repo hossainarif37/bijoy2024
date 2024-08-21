@@ -3,7 +3,7 @@ import Loading from "@/components/ui/Loading";
 import { IUser } from "@/types/types";
 import { useEffect, useState } from "react";
 
-const Home = () => {
+const Users = () => {
     const [users, setUsers] = useState<IUser[]>([]);
     const [loading, setLoading] = useState(true);
 
@@ -49,4 +49,4 @@ const Home = () => {
     );
 };
 
-export default Home;
+export default Users;
