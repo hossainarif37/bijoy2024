@@ -1,9 +1,7 @@
 "use client"
 
-import { Button, ConfigProvider, Input, Space } from "antd";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
 import { useForm } from "react-hook-form";
 
 type TInput = {
